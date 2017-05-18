@@ -8,3 +8,11 @@ end
 get '/' do
   haml :index
 end
+
+
+if settings.development?
+  require 'rack-livereload'
+  use Rack::LiveReload
+end
+
+set :enviroment, :development
